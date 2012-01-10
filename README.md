@@ -1,6 +1,6 @@
 # Timekeeper - Command line time management without need for a database
 
-Timeekeeper is a Python 3 application to manage your time. It does not need for a
+Timeekeeper is a Python 3 application to manage your time. It does not need a
 database, it works on plain text files with a command line interface.
 
 ## How to Use
