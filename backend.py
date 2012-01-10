@@ -4,7 +4,7 @@ from tkutil import DateFormat
 from tkutil import JobType
 import tkutil
 import fileinput
-
+import sys
 
 # files for storage
 job_category_file = 'job_categories.txt'
@@ -84,7 +84,7 @@ def delete_elements(filename, elem_id, elem_id_index):
         data =line.split('=>')
         
         if data[elem_id_index] == elem_id:
-            print("",end='')
+            sys.stdout.write("")
             elements_deleted.append(line)
         else:
             print(line)
