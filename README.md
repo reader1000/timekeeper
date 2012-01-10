@@ -61,31 +61,31 @@ First you need to define jobs and their types for future use.
 ### Report work related time record details
     $ python timekp.py --report allwork
 
-    > id     job name                    start time                    end time                      time spent
-    > 1      timekeeper project          Tue, 10 Jan 2012 13:30        Tue, 10 Jan 2012 15:47        0 days, 2 hours, 17 minutes
-    > 0      timekeeper project          Tue, 10 Jan 2012 18:19        Tue, 10 Jan 2012 18:19        0 days, 0 hours, 0 minutes
+    > id     job name                   start time                  end time                     time spent
+    > 1      timekeeper project         Tue, 10 Jan 2012 13:30      Tue, 10 Jan 2012 15:47       0 days, 2 hours, 17 minutes
+    > 0      timekeeper project         Tue, 10 Jan 2012 18:19      Tue, 10 Jan 2012 18:19       0 days, 0 hours, 0 minutes
 
 
 
 ### Report non-work related time record details
     $ python timekp.py --report allnonwork
 
-    > id     job name                     start time                    end time                      time spent
-    > 2      play tennis                  Sun, 08 Jan 2012 10:30        Sun, 08 Jan 2012 12:30        0 days, 2 hours, 0 minutes
+    > id     job name                   start time                   end time                    time spent
+    > 2      play tennis                Sun, 08 Jan 2012 10:30       Sun, 08 Jan 2012 12:30      0 days, 2 hours, 0 minutes
 
 
 ### Report everything
     $ python timekp.py --report all
 
-    > id     job name                     start time                    end time                      time spent
-    > 2      play tennis                  Sun, 08 Jan 2012 10:30        Sun, 08 Jan 2012 12:30        0 days, 2 hours, 0 minutes
-    > 1      timekeeper project           Tue, 10 Jan 2012 13:30        Tue, 10 Jan 2012 15:47        0 days, 2 hours, 17 minutes
-    > 0      timekeeper project           Tue, 10 Jan 2012 18:19        Tue, 10 Jan 2012 18:19        0 days, 0 hours, 0 minutes
+    > id     job name                   start time                   end time                    time spent
+    > 2      play tennis                Sun, 08 Jan 2012 10:30       Sun, 08 Jan 2012 12:30      0 days, 2 hours, 0 minutes
+    > 1      timekeeper project         Tue, 10 Jan 2012 13:30       Tue, 10 Jan 2012 15:47      0 days, 2 hours, 17 minutes
+    > 0      timekeeper project         Tue, 10 Jan 2012 18:19       Tue, 10 Jan 2012 18:19      0 days, 0 hours, 0 minutes
 
 ### Delete a time record
     $ python timekp.py --deleterecord 0
     > Following record has been deleted:
-    > 0      timekeeper project           Tue, 10 Jan 2012 18:19        Tue, 10 Jan 2012 18:19        0 days, 0 hours, 0 minutes
+    > 0      timekeeper project         Tue, 10 Jan 2012 18:19       Tue, 10 Jan 2012 18:19      0 days, 0 hours, 0 minutes
 
 ### Delete a job category
     $ python timekp.py --deletejob 1
