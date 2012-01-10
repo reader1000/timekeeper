@@ -9,10 +9,11 @@ First you need to define jobs and their types for future use.
 ($ for commands, > for outputs)
 
 ### For a work related job with name "timekeeper project":
-
+`
 $ python timekp.py --addjob work timekeeper project
 
 > timekeeper project added as work with id 0
+`
 
 ### For a non-work related job with name "play tennis":
 
@@ -21,7 +22,7 @@ $ python timekp.py --addjob non-work play tennis
 > play tennis added as non-work with id 1
 
 ### Then list the previously saved jobs:
-
+`
 $ python timekp.py --list
 
 > Job ID  Job Name
@@ -29,7 +30,7 @@ $ python timekp.py --list
 > 0       timekeeper project
 
 > 1       play tennis
-
+`
 
 ### Or search for a job:
 
