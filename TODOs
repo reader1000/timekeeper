@@ -1,0 +1,10 @@
+# TODOs 
+
+* Add more reporting options (weekly, monthly, job based etc)
+* Change file for completed jobs such that time records are saved to a file based on their date (i.e. monthly file )
+* Refactor code (a continuous and never ending process)
+* Add short options i.e -a for add (trivial)
+* Prepare a setup script
+* Organize files
+* ...
+
