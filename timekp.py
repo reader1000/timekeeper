@@ -164,23 +164,23 @@ class AddRecordAction(argparse.Action):
         add_job(values)
         setattr(namespace, self.dest, values)
     
-def report_summary():
+def report_summary(start_time, end_time):
     """Prints the summary report"""
-    total_time_spent = backend.get_time_summaries()
+    total_time_spent = backend.get_time_summaries(start_time, end_time)
     print("Time spent for work related things:\t %s" % tkutil.parse_timedelta(total_time_spent[JobType.WORK]))
     print("Time spent for non-work related things:\t %s" % tkutil.parse_timedelta(total_time_spent[JobType.NON_WORK]))
     print("Total time spent:\t\t\t %s" % tkutil.parse_timedelta(total_time_spent[JobType.WORK] + total_time_spent[JobType.NON_WORK]))
 
-def report_all(job_types):
+def report_all(job_types, start_time, end_time):
     """Prints the detailed report for given job types"""
-    all_records = backend.get_all_records_with_type(job_types)
+    all_records = backend.get_all_records_with_type(job_types,start_time, end_time)
     
     print(tkutil.get_print_header())
     all_records = sorted(all_records, key = lambda x : x["start_time"])
     for details in all_records:
         print(tkutil.get_pretty_print_record(details))
 
-def report_time(report_type='summary'):
+def report_time(report_type='summary', start_time=datetime(1, 1, 1), end_time=datetime(9999, 12, 31)):
     """Parses report arguments and fires the report action"""
     job_types = {}
     job_types['all'] = set([JobType.WORK, JobType.NON_WORK])
@@ -189,10 +189,10 @@ def report_time(report_type='summary'):
     
     try:
         if report_type == 'summary':
-            report_summary()
+            report_summary(start_time, end_time)
         else:
             try:
-                report_all(job_types[report_type] )
+                report_all(job_types[report_type], start_time, end_time)
             except KeyError:
                 print('There is no corresponding report type for "%s", please chech' % report_type)
     except IOError:
@@ -204,6 +204,41 @@ class ReportAction(argparse.Action):
     def __call__(self, parser, namespace, values, option_string=None):
         report_time(values[0])
         setattr(namespace, self.dest, values)
+        
+class ReportMonthAction(argparse.Action):
+    """Custom action for parsing and firing report time records action"""
+    def __call__(self, parser, namespace, values, option_string=None):
+        try:
+            time_interval = get_interval(values[1], 32, DateFormat.MONTH)
+            report_time(values[0], time_interval["start_time"], time_interval["end_time"])
+            setattr(namespace, self.dest, values)
+        except ValueError as msg:
+            print(msg)
+            return
+
+def get_interval(start_date, days_to_add, date_format):
+    try:
+        time_interval = {}
+        time_start = datetime.strptime(start_date,date_format)
+        time_interval["start_time"] = time_start
+        # as long as we are not dealing with exceptional dates in the history (and I hope in the future) this should work
+        time_end = time_start + timedelta(days=days_to_add) 
+        time_interval["end_time"] = datetime.strptime(time_end.strftime(date_format), date_format)
+    
+        return time_interval
+    except ValueError:
+        raise ValueError("Check the format, please: %s" % start_date)
+    
+class ReportYearAction(argparse.Action):
+    """Custom action for parsing and firing report time records action"""
+    def __call__(self, parser, namespace, values, option_string=None):
+        try:
+            time_interval = get_interval(values[1], 367, DateFormat.YEAR)
+            report_time(values[0], time_interval["start_time"], time_interval["end_time"])
+            setattr(namespace, self.dest, values)
+        except ValueError as msg:
+            print(msg)
+            return
 
 def main(argv):
     """Main method which parses and fires the related action.
@@ -250,6 +285,15 @@ def main(argv):
     
     group.add_argument('--report', nargs=1, metavar='report_type',type=str,
                                     help='Reports the times, types are summary, all, allwork, allnonwork', action=ReportAction)
+
+    group.add_argument('--reportmonth', nargs=2, type=str,
+                                    help='Reports the times of the month: report_type month(mm/yyyy)',
+                                    action=ReportMonthAction)
+                                    
+    group.add_argument('--reportyear', nargs=2, type=str,
+                                    help='Reports the times of the year: report_type year(yyyy)',
+                                    action=ReportYearAction)
+    
     
     # note that calling this function will also perform the actions specified with arguments.
     args = parser.parse_args()

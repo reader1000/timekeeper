@@ -10,6 +10,8 @@ class DateFormat:
     """Date formats for writing and reading. Pretty is only for reports. For rest compact"""
     COMPACT = "%d/%m/%Y-%H:%M"
     PRETTY = "%a, %d %b %Y %H:%M"
+    MONTH = "%m/%Y"
+    YEAR = "%Y"
     
     
 def get_job_type(string):

@@ -8,13 +8,13 @@ database, it works on plain text files with a command line interface.
 First you need to define jobs and their types for future use.
 ($ for commands)
 
-### For a work related job with name "timekeeper project":
+### Add a work related job with name "timekeeper project":
 
     $ python timekp.py --addjob work timekeeper project
 
      timekeeper project added as work with id 0
 
-### For a non-work related job with name "play tennis":
+### Add a non-work related job with name "play tennis":
 
     $ python timekp.py --addjob non-work play tennis
 
@@ -56,28 +56,71 @@ First you need to define jobs and their types for future use.
 
      Time record for the job "timekeeper project" has been saved
 
+### Report the summary of the time records for the month
 
-### Report the summary of time records
+    $ python timekp.py --reportmonth summary 01/2012
+
+     Time spent for work related things:      0 days, 3 hours, 19 minutes
+     Time spent for non-work related things:  0 days, 2 hours, 0 minutes
+     Total time spent:                        0 days, 5 hours, 19 minutes
+
+### Report the summary of the time recods for the year
+    $ python timekp.py --reportyear summary 2012
+
+     Time spent for work related things:      0 days, 3 hours, 19 minutes
+     Time spent for non-work related things:  0 days, 2 hours, 0 minutes
+     Total time spent:                        0 days, 5 hours, 19 minutes
+
+### Report the summary of all time records
     $ python timekp.py --report summary
 
-     Time spent for work related things:      0 days, 2 hours, 17 minutes
-     Time spent for non-work related things:  0 days, 2 hours, 0 minutes
-     Total time spent:                        0 days, 4 hours, 17 minutes
+     Time spent for work related things:      0 days, 4 hours, 41 minutes
+     Time spent for non-work related things:  0 days, 7 hours, 0 minutes
+     Total time spent:                        0 days, 11 hours, 41 minutes
+
+### Report work related time records details for the month
+
+    $ python timekp.py --reportmonth allwork 01/2012
+
+     id     job name                   start time                  end time                     time spent
+     0      timekeeper project         Tue, 10 Jan 2012 13:30       Tue, 10 Jan 2012 15:47      0 days, 2 hours, 17 minutes
+     1      timekeeper project         Tue, 10 Jan 2012 18:19       Tue, 10 Jan 2012 19:21      0 days, 1 hours, 2 minutes
+
+### Report work related time records for the year
+
+     $ python timekp.py --reportyear allwork 2011
+
+     id     job name                   start time                  end time                     time spent     
+     6      timekeeper project         Thu, 24 Nov 2011 14:19       Thu, 24 Nov 2011 14:30      0 days, 0 hours, 11 minutes
+     5      timekeeper project         Fri, 30 Dec 2011 18:19       Fri, 30 Dec 2011 19:30      0 days, 1 hours, 11 minutes
 
 
-### Report work related time record details
+### Report all work related time record details
     $ python timekp.py --report allwork
 
      id     job name                   start time                  end time                     time spent
-     1      timekeeper project         Tue, 10 Jan 2012 13:30      Tue, 10 Jan 2012 15:47       0 days, 2 hours, 17 minutes
-     0      timekeeper project         Tue, 10 Jan 2012 18:19      Tue, 10 Jan 2012 18:19       0 days, 0 hours, 0 minutes
+     6      timekeeper project         Thu, 24 Nov 2011 14:19       Thu, 24 Nov 2011 14:30      0 days, 0 hours, 11 minutes
+     5      timekeeper project         Fri, 30 Dec 2011 18:19       Fri, 30 Dec 2011 19:30      0 days, 1 hours, 11 minutes
+     0      timekeeper project         Tue, 10 Jan 2012 13:30       Tue, 10 Jan 2012 15:47      0 days, 2 hours, 17 minutes
+     1      timekeeper project         Tue, 10 Jan 2012 18:19       Tue, 10 Jan 2012 19:21      0 days, 1 hours, 2 minutes
 
+### Report non-work related time records details for the month
+     $ python timekp.py --reportmonth allnonwork 01/2012
+     id     job name                   start time                   end time                    time spent
+     2      play tennis                Sun, 08 Jan 2012 10:30       Sun, 08 Jan 2012 12:30      0 days, 2 hours, 0 minutes
 
+### Report non-work related time records for the year
+     $ python timekp.py --reportyear allnonwork 2011
+     id     job name                   start time                   end time                    time spent
+     4      play tennis                Thu, 03 Nov 2011 10:30       Thu, 03 Nov 2011 13:30      0 days, 3 hours, 0 minutes
+     3      play tennis                Sat, 03 Dec 2011 10:30       Sat, 03 Dec 2011 12:30      0 days, 2 hours, 0 minutes
 
 ### Report non-work related time record details
     $ python timekp.py --report allnonwork
 
      id     job name                   start time                   end time                    time spent
+     4      play tennis                Thu, 03 Nov 2011 10:30       Thu, 03 Nov 2011 13:30      0 days, 3 hours, 0 minutes
+     3      play tennis                Sat, 03 Dec 2011 10:30       Sat, 03 Dec 2011 12:30      0 days, 2 hours, 0 minutes
      2      play tennis                Sun, 08 Jan 2012 10:30       Sun, 08 Jan 2012 12:30      0 days, 2 hours, 0 minutes
 
 
@@ -85,9 +128,14 @@ First you need to define jobs and their types for future use.
     $ python timekp.py --report all
 
      id     job name                   start time                   end time                    time spent
+     4      play tennis                Thu, 03 Nov 2011 10:30       Thu, 03 Nov 2011 13:30      0 days, 3 hours, 0 minutes
+     6      timekeeper project         Thu, 24 Nov 2011 14:19       Thu, 24 Nov 2011 14:30      0 days, 0 hours, 11 minutes
+     3      play tennis                Sat, 03 Dec 2011 10:30       Sat, 03 Dec 2011 12:30      0 days, 2 hours, 0 minutes
+     5      timekeeper project         Fri, 30 Dec 2011 18:19       Fri, 30 Dec 2011 19:30      0 days, 1 hours, 11 minutes
      2      play tennis                Sun, 08 Jan 2012 10:30       Sun, 08 Jan 2012 12:30      0 days, 2 hours, 0 minutes
-     1      timekeeper project         Tue, 10 Jan 2012 13:30       Tue, 10 Jan 2012 15:47      0 days, 2 hours, 17 minutes
-     0      timekeeper project         Tue, 10 Jan 2012 18:19       Tue, 10 Jan 2012 18:19      0 days, 0 hours, 0 minutes
+     0      timekeeper project         Tue, 10 Jan 2012 13:30       Tue, 10 Jan 2012 15:47      0 days, 2 hours, 17 minutes
+     1      timekeeper project         Tue, 10 Jan 2012 18:19       Tue, 10 Jan 2012 19:21      0 days, 1 hours, 2 minutes
+
 
 ### Delete a time record
     $ python timekp.py --deleterecord 0

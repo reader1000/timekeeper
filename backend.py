@@ -232,7 +232,7 @@ def pop_from_currents():
     open(current_job_file,'w').close() # clear file
     return details
     
-def get_all_records_with_type(job_types):
+def get_all_records_with_type(job_types, start_time, end_time):
     """This function returns the time records for corresponding job types.
     Arguments job_types is a list of JobType elements
     Returning elements is a list of dictionary elements whose keys are: record_id, jobid, jobname, start_time, end_time
@@ -242,14 +242,18 @@ def get_all_records_with_type(job_types):
     with open(completed_jobs_file) as inf:
         for line in inf:
             time_details = tkutil.parse_time_details(line)
-            job_details = get_job_details(time_details["jobid"])
-            time_details["jobname"] = job_details[0]
-            if job_details[1] in job_types:
-                all_records.append(time_details)
+            if is_within_interval(time_details, start_time, end_time):
+                job_details = get_job_details(time_details["jobid"])
+                time_details["jobname"] = job_details[0]
+                if job_details[1] in job_types:
+                    all_records.append(time_details)
     
     return all_records
 
-def get_time_summaries():
+def is_within_interval(record_to_check, start_time, end_time):
+    return start_time <= record_to_check["start_time"] and  record_to_check["end_time"] < end_time
+
+def get_time_summaries(start_time, end_time):
     """Returns the summary of the time records. These are the total times spent for job types.
     Returning element is a dictionary with following keys: JobType.WORK, JobType.NON_WORK
     """
@@ -260,8 +264,9 @@ def get_time_summaries():
     with open(completed_jobs_file) as inf:
         for line in inf:
             time_details = tkutil.parse_time_details(line)
-            job_details = get_job_details(time_details["jobid"])
-            time_spent = time_details["end_time"] - time_details["start_time"]
-            total_time_spent[job_details[1]] += time_spent
+            if is_within_interval(time_details, start_time, end_time):
+                job_details = get_job_details(time_details["jobid"])
+                time_spent = time_details["end_time"] - time_details["start_time"]
+                total_time_spent[job_details[1]] += time_spent
     
     return total_time_spent
