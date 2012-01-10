@@ -3,6 +3,13 @@
 Timeekeeper is a Python 3 application to manage your time. It does not need a
 database, it works on plain text files with a command line interface.
 
+## Basic Setup
+
+* Download the files timekp.py, backend.py and tkutil.py 
+* Put them in same folder with read/write permission
+
+Note: In the future a nicer way will be provided.
+
 ## How to Use
 
 First you need to define jobs and their types for future use.
