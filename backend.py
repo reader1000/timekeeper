@@ -201,15 +201,18 @@ def check_for_overlaps(start_time, end_time):
     """This function checks if any of the previously saved time records overlaps with given time interval.
     In case of overlap, this method will raise an exception
     """
-    with open(completed_jobs_file) as inf:
-        for line in inf:
-            record_to_check = tkutil.parse_time_details(line)
-            if is_overlapping(record_to_check, start_time, end_time):
-                job_details = get_job_details(record_to_check["jobid"])
-                record_to_check["jobname"] = job_details[0]
-                msg = ("The time records is overlapping with the following record, please check:\n%s\n%s"
-                                                        % (tkutil.get_print_header(), tkutil.get_pretty_print_record(record_to_check)))
-                raise ValueError(msg)
+    try:
+        with open(completed_jobs_file) as inf:
+            for line in inf:
+                record_to_check = tkutil.parse_time_details(line)
+                if is_overlapping(record_to_check, start_time, end_time):
+                    job_details = get_job_details(record_to_check["jobid"])
+                    record_to_check["jobname"] = job_details[0]
+                    msg = ("The time records is overlapping with the following record, please check:\n%s\n%s"
+                                                            % (tkutil.get_print_header(), tkutil.get_pretty_print_record(record_to_check)))
+                    raise ValueError(msg)
+    except IOError:
+        pass # first time so no records at all
 
 
 def pop_from_currents():
