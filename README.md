@@ -5,8 +5,8 @@ database, it works on plain text files with a command line interface.
 
 ## Basic Setup
 
-* Download the files timekp.py, backend.py and tkutil.py 
-* Put them in same folder with read/write permission
+* Download the timekeeper.tar.gz
+* Extract it to folder with read/write permissions
 
 Note: In the future a nicer way will be provided.
 
