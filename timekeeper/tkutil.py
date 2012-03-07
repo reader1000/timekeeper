@@ -59,8 +59,11 @@ def print_job_ids(joblist):
 
 def get_print_header():
     """Returns a pretty string for header to be used reports with all time entries"""
-    return ("id".ljust(5) + "\t" + "job name".ljust(25) + "\t" + 
-                    "start time".ljust(25) +  "\t" + "end time".ljust(25) + "\ttime spent")
+    return "\t".join([ "id".ljust(5),
+            "job name".ljust(25),
+            "start time".ljust(25),
+            "end time".ljust(25),
+            "time spent" ])
 
 
 def get_pretty_print_record(details):
@@ -68,6 +71,8 @@ def get_pretty_print_record(details):
        record_id, jobname, start_time, end_time
     """
     time_spent = details["end_time"] - details["start_time"]
-    return (details["record_id"].ljust(5) + "\t" + details["jobname"].ljust(25) +"\t" + 
-                            details["start_time"].strftime(DateFormat.PRETTY).ljust(25) + "\t" + 
-                            details["end_time"].strftime(DateFormat.PRETTY).ljust(25) + "\t" + parse_timedelta(time_spent))
+    return "\t".join([ details["record_id"].ljust(5),
+            details["jobname"].ljust(25),
+            details["start_time"].strftime(DateFormat.PRETTY).ljust(25),
+            details["end_time"].strftime(DateFormat.PRETTY).ljust(25),
+            parse_timedelta(time_spent)])
