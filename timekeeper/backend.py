@@ -1,3 +1,5 @@
+# -- coding: utf-8 --
+"""Backend for storing time records. This module provides operations to store time records."""
 from datetime import datetime
 from datetime import timedelta
 from tkutil import DateFormat
