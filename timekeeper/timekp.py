@@ -1,5 +1,8 @@
 #!/usr/bin/python
 # -- coding: utf-8 --
+"""
+Command line time management without need for a database.
+"""
 
 import sys
 import argparse

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module tkutil</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>tkutil</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/yakup/kodlar/python/timekeeper/timekeeper/tkutil.py">/home/yakup/kodlar/python/timekeeper/timekeeper/tkutil.py</a></font></td></tr></table>
+    <p><tt>Util&nbsp;functions&nbsp;for&nbsp;timekeeper&nbsp;such&nbsp;as&nbsp;parsing&nbsp;lines&nbsp;or&nbsp;formatting&nbsp;data&nbsp;for&nbsp;reports</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="tkutil.html#DateFormat">DateFormat</a>
+</font></dt><dt><font face="helvetica, arial"><a href="tkutil.html#JobType">JobType</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DateFormat">class <strong>DateFormat</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Date&nbsp;formats&nbsp;for&nbsp;writing&nbsp;and&nbsp;reading.&nbsp;Pretty&nbsp;is&nbsp;only&nbsp;for&nbsp;reports.&nbsp;For&nbsp;rest&nbsp;compact<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>COMPACT</strong> = '%d/%m/%Y-%H:%M'</dl>
+
+<dl><dt><strong>MONTH</strong> = '%m/%Y'</dl>
+
+<dl><dt><strong>PRETTY</strong> = '%a, %d %b %Y %H:%M'</dl>
+
+<dl><dt><strong>YEAR</strong> = '%Y'</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="JobType">class <strong>JobType</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Enum&nbsp;like&nbsp;class&nbsp;for&nbsp;job&nbsp;types:&nbsp;Work,&nbsp;Non-Work<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>NON_WORK</strong> = 2</dl>
+
+<dl><dt><strong>WORK</strong> = 1</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-get_job_type"><strong>get_job_type</strong></a>(string)</dt><dd><tt>Returns&nbsp;<a href="#JobType">JobType</a>&nbsp;corresponding&nbsp;to&nbsp;string:&nbsp;work&nbsp;or&nbsp;non-work.&nbsp;For&nbsp;any&nbsp;other&nbsp;string&nbsp;it&nbsp;will&nbsp;raise&nbsp;an&nbsp;exception</tt></dd></dl>
+ <dl><dt><a name="-get_pretty_print_record"><strong>get_pretty_print_record</strong></a>(details)</dt><dd><tt>Returns&nbsp;a&nbsp;pretty&nbsp;string&nbsp;for&nbsp;given&nbsp;time&nbsp;records.&nbsp;Note&nbsp;that&nbsp;argument&nbsp;must&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;following&nbsp;keys:<br>
+record_id,&nbsp;jobname,&nbsp;start_time,&nbsp;end_time</tt></dd></dl>
+ <dl><dt><a name="-get_print_header"><strong>get_print_header</strong></a>()</dt><dd><tt>Returns&nbsp;a&nbsp;pretty&nbsp;string&nbsp;for&nbsp;header&nbsp;to&nbsp;be&nbsp;used&nbsp;reports&nbsp;with&nbsp;all&nbsp;time&nbsp;entries</tt></dd></dl>
+ <dl><dt><a name="-parse_line"><strong>parse_line</strong></a>(line, delim<font color="#909090">='=&gt;'</font>)</dt><dd><tt>Removes&nbsp;the&nbsp;new&nbsp;line&nbsp;character&nbsp;and&nbsp;splits&nbsp;the&nbsp;line&nbsp;according&nbsp;to&nbsp;delimiter</tt></dd></dl>
+ <dl><dt><a name="-parse_time_details"><strong>parse_time_details</strong></a>(line)</dt><dd><tt>Parses&nbsp;the&nbsp;line&nbsp;of&nbsp;completed&nbsp;job&nbsp;file&nbsp;and&nbsp;returns&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;following&nbsp;keys:&nbsp;record_id,&nbsp;jobid,&nbsp;start_time,&nbsp;end_time</tt></dd></dl>
+ <dl><dt><a name="-parse_timedelta"><strong>parse_timedelta</strong></a>(td)</dt><dd><tt>Returns&nbsp;a&nbsp;human-readable&nbsp;string&nbsp;for&nbsp;time&nbsp;differences</tt></dd></dl>
+ <dl><dt><a name="-print_job_ids"><strong>print_job_ids</strong></a>(joblist)</dt><dd><tt>Prints&nbsp;job&nbsp;ids&nbsp;and&nbsp;job&nbsp;names</tt></dd></dl>
+</td></tr></table>
+</body></html>

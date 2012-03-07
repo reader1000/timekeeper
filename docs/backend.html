@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module backend</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>backend</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/yakup/kodlar/python/timekeeper/timekeeper/backend.py">/home/yakup/kodlar/python/timekeeper/timekeeper/backend.py</a></font></td></tr></table>
+    <p><tt>Backend&nbsp;for&nbsp;storing&nbsp;time&nbsp;records.&nbsp;This&nbsp;module&nbsp;provides&nbsp;operations&nbsp;to&nbsp;store&nbsp;time&nbsp;records.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="fileinput.html">fileinput</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top><a href="tkutil.html">tkutil</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-add_job_category"><strong>add_job_category</strong></a>(jobtype, jobname)</dt><dd><tt>Adds&nbsp;a&nbsp;new&nbsp;job&nbsp;category&nbsp;to&nbsp;job_category_file&nbsp;and&nbsp;return&nbsp;the&nbsp;id&nbsp;of&nbsp;the&nbsp;inserted&nbsp;job.<br>
+If&nbsp;the&nbsp;job&nbsp;with&nbsp;exact&nbsp;match&nbsp;exists,&nbsp;then&nbsp;it&nbsp;raises&nbsp;an&nbsp;exception.<br>
+New&nbsp;job&nbsp;will&nbsp;be&nbsp;given&nbsp;a&nbsp;job&nbsp;id&nbsp;which&nbsp;is&nbsp;(max_id_of_previous_jobs&nbsp;+&nbsp;1)</tt></dd></dl>
+ <dl><dt><a name="-check_for_overlaps"><strong>check_for_overlaps</strong></a>(start_time, end_time)</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;if&nbsp;any&nbsp;of&nbsp;the&nbsp;previously&nbsp;saved&nbsp;time&nbsp;records&nbsp;overlaps&nbsp;with&nbsp;given&nbsp;time&nbsp;interval.<br>
+In&nbsp;case&nbsp;of&nbsp;overlap,&nbsp;this&nbsp;method&nbsp;will&nbsp;raise&nbsp;an&nbsp;exception</tt></dd></dl>
+ <dl><dt><a name="-contains_any"><strong>contains_any</strong></a>(line, search_words)</dt><dd><tt>Searchs&nbsp;for&nbsp;words&nbsp;in&nbsp;the&nbsp;line.<br>
+If&nbsp;any&nbsp;of&nbsp;words&nbsp;in&nbsp;the&nbsp;search_words&nbsp;list&nbsp;can&nbsp;be&nbsp;found&nbsp;in&nbsp;the&nbsp;line&nbsp;it&nbsp;returns&nbsp;True,&nbsp;otherwise&nbsp;False</tt></dd></dl>
+ <dl><dt><a name="-delete_elements"><strong>delete_elements</strong></a>(filename, elem_id, elem_id_index)</dt><dd><tt>Helper&nbsp;function&nbsp;for&nbsp;deleting&nbsp;elements&nbsp;from&nbsp;files.<br>
+Arguments&nbsp;are&nbsp;elem_id&nbsp;to&nbsp;delete&nbsp;and&nbsp;elem_id_index&nbsp;which&nbsp;indicates&nbsp;the&nbsp;index&nbsp;of&nbsp;the&nbsp;id&nbsp;element&nbsp;in&nbsp;the&nbsp;file&nbsp;after&nbsp;splitting.<br>
+It&nbsp;returns&nbsp;the&nbsp;lines&nbsp;deleted&nbsp;from&nbsp;the&nbsp;file.</tt></dd></dl>
+ <dl><dt><a name="-delete_from_job_category"><strong>delete_from_job_category</strong></a>(jobid)</dt><dd><tt>Deletes&nbsp;the&nbsp;job&nbsp;category&nbsp;and&nbsp;the&nbsp;time&nbsp;records&nbsp;with&nbsp;this&nbsp;job&nbsp;category&nbsp;for&nbsp;given&nbsp;jobid<br>
+and&nbsp;returns&nbsp;the&nbsp;job&nbsp;name&nbsp;for&nbsp;given&nbsp;id</tt></dd></dl>
+ <dl><dt><a name="-delete_from_records"><strong>delete_from_records</strong></a>(record_id)</dt><dd><tt>Deletes&nbsp;the&nbsp;time&nbsp;records&nbsp;for&nbsp;given&nbsp;record&nbsp;id.&nbsp;<br>
+If&nbsp;somehow&nbsp;it&nbsp;deletes&nbsp;more&nbsp;than&nbsp;one&nbsp;entry&nbsp;it&nbsp;will&nbsp;rollback&nbsp;and&nbsp;raise&nbsp;an&nbsp;exception</tt></dd></dl>
+ <dl><dt><a name="-get_all_records_with_type"><strong>get_all_records_with_type</strong></a>(job_types, start_time, end_time)</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;time&nbsp;records&nbsp;for&nbsp;corresponding&nbsp;job&nbsp;types.<br>
+Arguments&nbsp;job_types&nbsp;is&nbsp;a&nbsp;list&nbsp;of&nbsp;JobType&nbsp;elements<br>
+Returning&nbsp;elements&nbsp;is&nbsp;a&nbsp;list&nbsp;of&nbsp;dictionary&nbsp;elements&nbsp;whose&nbsp;keys&nbsp;are:&nbsp;record_id,&nbsp;jobid,&nbsp;jobname,&nbsp;start_time,&nbsp;end_time</tt></dd></dl>
+ <dl><dt><a name="-get_categories"><strong>get_categories</strong></a>()</dt><dd><tt>Returns&nbsp;the&nbsp;all&nbsp;job&nbsp;category&nbsp;details.<br>
+Returning&nbsp;element&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;whose&nbsp;keys&nbsp;are&nbsp;job&nbsp;ids&nbsp;and&nbsp;values&nbsp;are&nbsp;tuples&nbsp;with&nbsp;format&nbsp;(jobname,&nbsp;jobtype)</tt></dd></dl>
+ <dl><dt><a name="-get_job_details"><strong>get_job_details</strong></a>(jobid)</dt><dd><tt>Returns&nbsp;the&nbsp;details&nbsp;of&nbsp;the&nbsp;job&nbsp;with&nbsp;given&nbsp;jobid.&nbsp;Returning&nbsp;element&nbsp;is&nbsp;a&nbsp;tuple&nbsp;with&nbsp;format&nbsp;(jobname,&nbsp;jobtype)</tt></dd></dl>
+ <dl><dt><a name="-get_time_summaries"><strong>get_time_summaries</strong></a>(start_time, end_time)</dt><dd><tt>Returns&nbsp;the&nbsp;summary&nbsp;of&nbsp;the&nbsp;time&nbsp;records.&nbsp;These&nbsp;are&nbsp;the&nbsp;total&nbsp;times&nbsp;spent&nbsp;for&nbsp;job&nbsp;types.<br>
+Returning&nbsp;element&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;following&nbsp;keys:&nbsp;JobType.WORK,&nbsp;JobType.NON_WORK</tt></dd></dl>
+ <dl><dt><a name="-insert_completed_job"><strong>insert_completed_job</strong></a>(jobid, start_time, end_time)</dt><dd><tt>Inserts&nbsp;a&nbsp;completed&nbsp;job&nbsp;to&nbsp;completed_jobs_file&nbsp;for&nbsp;given&nbsp;jobid,&nbsp;start_time,&nbsp;end_time<br>
+It&nbsp;will&nbsp;raise&nbsp;an&nbsp;exception:<br>
+-if&nbsp;new&nbsp;entry&nbsp;overlaps&nbsp;any&nbsp;of&nbsp;the&nbsp;time&nbsp;records&nbsp;saved&nbsp;previously.<br>
+-if&nbsp;there&nbsp;is&nbsp;no&nbsp;element&nbsp;in&nbsp;the&nbsp;job_category_file&nbsp;for&nbsp;corresponding&nbsp;jobid<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;stores&nbsp;the&nbsp;id&nbsp;of&nbsp;the&nbsp;last&nbsp;inserted&nbsp;time&nbsp;record&nbsp;so&nbsp;that&nbsp;next&nbsp;time&nbsp;it&nbsp;can&nbsp;use&nbsp;it&nbsp;(autoincrement&nbsp;id)<br>
+It&nbsp;will&nbsp;return&nbsp;the&nbsp;job&nbsp;name&nbsp;for&nbsp;inserted&nbsp;jobid</tt></dd></dl>
+ <dl><dt><a name="-insert_job_to_currents"><strong>insert_job_to_currents</strong></a>(jobid, start_time)</dt><dd><tt>Inserts&nbsp;the&nbsp;job&nbsp;to&nbsp;current&nbsp;jobs&nbsp;with&nbsp;given&nbsp;jobid&nbsp;and&nbsp;start_time<br>
+It&nbsp;clears&nbsp;the&nbsp;previous&nbsp;data&nbsp;on&nbsp;the&nbsp;current&nbsp;job&nbsp;file&nbsp;so&nbsp;that&nbsp;only&nbsp;one&nbsp;job&nbsp;can&nbsp;be&nbsp;started.</tt></dd></dl>
+ <dl><dt><a name="-is_overlapping"><strong>is_overlapping</strong></a>(record_to_check, start_time, end_time)</dt><dd><tt>This&nbsp;function&nbsp;checks&nbsp;whether&nbsp;given&nbsp;record&nbsp;and&nbsp;time&nbsp;intervals&nbsp;are&nbsp;overlapping</tt></dd></dl>
+ <dl><dt><a name="-is_within_interval"><strong>is_within_interval</strong></a>(record_to_check, start_time, end_time)</dt></dl>
+ <dl><dt><a name="-list_all_jobs_ids"><strong>list_all_jobs_ids</strong></a>()</dt><dd><tt>Returns&nbsp;all&nbsp;the&nbsp;job&nbsp;ids&nbsp;and&nbsp;names&nbsp;in&nbsp;the&nbsp;job_category_file.<br>
+It&nbsp;returns&nbsp;a&nbsp;list&nbsp;that&nbsp;contains&nbsp;tuples&nbsp;with&nbsp;format&nbsp;(jobid,&nbsp;jobname&nbsp;)</tt></dd></dl>
+ <dl><dt><a name="-pop_from_currents"><strong>pop_from_currents</strong></a>()</dt><dd><tt>Returns&nbsp;the&nbsp;job&nbsp;id&nbsp;and&nbsp;start&nbsp;time&nbsp;of&nbsp;the&nbsp;job&nbsp;started&nbsp;before&nbsp;and&nbsp;clears&nbsp;the&nbsp;file&nbsp;(or&nbsp;related&nbsp;storage&nbsp;element)</tt></dd></dl>
+ <dl><dt><a name="-rollback"><strong>rollback</strong></a>(filename, lines)</dt><dd><tt>In&nbsp;case&nbsp;of&nbsp;a&nbsp;failure,&nbsp;writes&nbsp;all&nbsp;lines&nbsp;back&nbsp;to&nbsp;the&nbsp;file.&nbsp;<br>
+Argument&nbsp;lines&nbsp;must&nbsp;be&nbsp;list&nbsp;that&nbsp;contains&nbsp;the&nbsp;lines&nbsp;deleted&nbsp;from&nbsp;the&nbsp;file&nbsp;and&nbsp;lines&nbsp;must&nbsp;not&nbsp;contain&nbsp;new&nbsp;line&nbsp;character</tt></dd></dl>
+ <dl><dt><a name="-search_jobs_for_ids"><strong>search_jobs_for_ids</strong></a>(search_words)</dt><dd><tt>Searchs&nbsp;for&nbsp;jobs&nbsp;whose&nbsp;name&nbsp;matches&nbsp;any&nbsp;of&nbsp;the&nbsp;given&nbsp;search&nbsp;words.<br>
+It&nbsp;searches&nbsp;eagerly,&nbsp;not&nbsp;for&nbsp;exact&nbsp;match.<br>
+It&nbsp;returns&nbsp;a&nbsp;list&nbsp;that&nbsp;contains&nbsp;tuples&nbsp;with&nbsp;format&nbsp;(jobid,&nbsp;jobname&nbsp;)</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>completed_jobs_file</strong> = 'completed_jobs.txt'<br>
+<strong>current_job_file</strong> = 'current_job.txt'<br>
+<strong>job_category_file</strong> = 'job_categories.txt'<br>
+<strong>last_id_file</strong> = 'last_id.txt'</td></tr></table>
+</body></html>

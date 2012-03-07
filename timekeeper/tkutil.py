@@ -1,4 +1,7 @@
 # -- coding: utf-8 --
+"""
+Util functions for timekeeper such as parsing lines or formatting data for reports
+"""
 from datetime import datetime
 from datetime import timedelta
 

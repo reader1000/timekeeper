@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module timekp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>timekp</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/yakup/kodlar/python/timekeeper/timekeeper/timekp.py">/home/yakup/kodlar/python/timekeeper/timekeeper/timekp.py</a></font></td></tr></table>
+    <p><tt>Command&nbsp;line&nbsp;time&nbsp;management&nbsp;without&nbsp;need&nbsp;for&nbsp;a&nbsp;database.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="argparse.html">argparse</a><br>
+<a href="backend.html">backend</a><br>
+</td><td width="25%" valign=top><a href="fileinput.html">fileinput</a><br>
+<a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top><a href="tkutil.html">tkutil</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="argparse.html#Action">argparse.Action</a>(<a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="timekp.html#AddJobAction">AddJobAction</a>
+</font></dt><dt><font face="helvetica, arial"><a href="timekp.html#AddRecordAction">AddRecordAction</a>
+</font></dt><dt><font face="helvetica, arial"><a href="timekp.html#DeleteJobCategoryAction">DeleteJobCategoryAction</a>
+</font></dt><dt><font face="helvetica, arial"><a href="timekp.html#DeleteRecordAction">DeleteRecordAction</a>
+</font></dt><dt><font face="helvetica, arial"><a href="timekp.html#EndAction">EndAction</a>
+</font></dt><dt><font face="helvetica, arial"><a href="timekp.html#ListAction">ListAction</a>
+</font></dt><dt><font face="helvetica, arial"><a href="timekp.html#ReportAction">ReportAction</a>
+</font></dt><dt><font face="helvetica, arial"><a href="timekp.html#ReportMonthAction">ReportMonthAction</a>
+</font></dt><dt><font face="helvetica, arial"><a href="timekp.html#ReportYearAction">ReportYearAction</a>
+</font></dt><dt><font face="helvetica, arial"><a href="timekp.html#SearchAction">SearchAction</a>
+</font></dt><dt><font face="helvetica, arial"><a href="timekp.html#StartAction">StartAction</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="AddJobAction">class <strong>AddJobAction</strong></a>(<a href="argparse.html#Action">argparse.Action</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Custom&nbsp;action&nbsp;for&nbsp;parsing&nbsp;and&nbsp;firing&nbsp;add&nbsp;job&nbsp;action<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="timekp.html#AddJobAction">AddJobAction</a></dd>
+<dd><a href="argparse.html#Action">argparse.Action</a></dd>
+<dd><a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="AddJobAction-__call__"><strong>__call__</strong></a>(self, parser, namespace, values, option_string<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#Action">argparse.Action</a>:<br>
+<dl><dt><a name="AddJobAction-__init__"><strong>__init__</strong></a>(self, option_strings, dest, nargs<font color="#909090">=None</font>, const<font color="#909090">=None</font>, default<font color="#909090">=None</font>, type<font color="#909090">=None</font>, choices<font color="#909090">=None</font>, required<font color="#909090">=False</font>, help<font color="#909090">=None</font>, metavar<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><a name="AddJobAction-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="AddRecordAction">class <strong>AddRecordAction</strong></a>(<a href="argparse.html#Action">argparse.Action</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Custom&nbsp;action&nbsp;for&nbsp;parsing&nbsp;and&nbsp;firing&nbsp;add&nbsp;time&nbsp;record&nbsp;action<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="timekp.html#AddRecordAction">AddRecordAction</a></dd>
+<dd><a href="argparse.html#Action">argparse.Action</a></dd>
+<dd><a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="AddRecordAction-__call__"><strong>__call__</strong></a>(self, parser, namespace, values, option_string<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#Action">argparse.Action</a>:<br>
+<dl><dt><a name="AddRecordAction-__init__"><strong>__init__</strong></a>(self, option_strings, dest, nargs<font color="#909090">=None</font>, const<font color="#909090">=None</font>, default<font color="#909090">=None</font>, type<font color="#909090">=None</font>, choices<font color="#909090">=None</font>, required<font color="#909090">=False</font>, help<font color="#909090">=None</font>, metavar<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><a name="AddRecordAction-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DeleteJobCategoryAction">class <strong>DeleteJobCategoryAction</strong></a>(<a href="argparse.html#Action">argparse.Action</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Custom&nbsp;action&nbsp;for&nbsp;parsing&nbsp;and&nbsp;firing&nbsp;delete&nbsp;job&nbsp;action<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="timekp.html#DeleteJobCategoryAction">DeleteJobCategoryAction</a></dd>
+<dd><a href="argparse.html#Action">argparse.Action</a></dd>
+<dd><a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="DeleteJobCategoryAction-__call__"><strong>__call__</strong></a>(self, parser, namespace, values, option_string<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#Action">argparse.Action</a>:<br>
+<dl><dt><a name="DeleteJobCategoryAction-__init__"><strong>__init__</strong></a>(self, option_strings, dest, nargs<font color="#909090">=None</font>, const<font color="#909090">=None</font>, default<font color="#909090">=None</font>, type<font color="#909090">=None</font>, choices<font color="#909090">=None</font>, required<font color="#909090">=False</font>, help<font color="#909090">=None</font>, metavar<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><a name="DeleteJobCategoryAction-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DeleteRecordAction">class <strong>DeleteRecordAction</strong></a>(<a href="argparse.html#Action">argparse.Action</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Custom&nbsp;action&nbsp;for&nbsp;parsing&nbsp;and&nbsp;firing&nbsp;delete&nbsp;time&nbsp;record&nbsp;action<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="timekp.html#DeleteRecordAction">DeleteRecordAction</a></dd>
+<dd><a href="argparse.html#Action">argparse.Action</a></dd>
+<dd><a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="DeleteRecordAction-__call__"><strong>__call__</strong></a>(self, parser, namespace, values, option_string<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#Action">argparse.Action</a>:<br>
+<dl><dt><a name="DeleteRecordAction-__init__"><strong>__init__</strong></a>(self, option_strings, dest, nargs<font color="#909090">=None</font>, const<font color="#909090">=None</font>, default<font color="#909090">=None</font>, type<font color="#909090">=None</font>, choices<font color="#909090">=None</font>, required<font color="#909090">=False</font>, help<font color="#909090">=None</font>, metavar<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><a name="DeleteRecordAction-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="EndAction">class <strong>EndAction</strong></a>(<a href="argparse.html#Action">argparse.Action</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Custom&nbsp;action&nbsp;for&nbsp;parsing&nbsp;and&nbsp;firing&nbsp;end&nbsp;time&nbsp;record&nbsp;action<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="timekp.html#EndAction">EndAction</a></dd>
+<dd><a href="argparse.html#Action">argparse.Action</a></dd>
+<dd><a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EndAction-__call__"><strong>__call__</strong></a>(self, parser, namespace, values, option_string<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#Action">argparse.Action</a>:<br>
+<dl><dt><a name="EndAction-__init__"><strong>__init__</strong></a>(self, option_strings, dest, nargs<font color="#909090">=None</font>, const<font color="#909090">=None</font>, default<font color="#909090">=None</font>, type<font color="#909090">=None</font>, choices<font color="#909090">=None</font>, required<font color="#909090">=False</font>, help<font color="#909090">=None</font>, metavar<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><a name="EndAction-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ListAction">class <strong>ListAction</strong></a>(<a href="argparse.html#Action">argparse.Action</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Custom&nbsp;action&nbsp;for&nbsp;parsing&nbsp;and&nbsp;firing&nbsp;list&nbsp;job&nbsp;categories&nbsp;action<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="timekp.html#ListAction">ListAction</a></dd>
+<dd><a href="argparse.html#Action">argparse.Action</a></dd>
+<dd><a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ListAction-__call__"><strong>__call__</strong></a>(self, parser, namespace, values, option_string<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#Action">argparse.Action</a>:<br>
+<dl><dt><a name="ListAction-__init__"><strong>__init__</strong></a>(self, option_strings, dest, nargs<font color="#909090">=None</font>, const<font color="#909090">=None</font>, default<font color="#909090">=None</font>, type<font color="#909090">=None</font>, choices<font color="#909090">=None</font>, required<font color="#909090">=False</font>, help<font color="#909090">=None</font>, metavar<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><a name="ListAction-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ReportAction">class <strong>ReportAction</strong></a>(<a href="argparse.html#Action">argparse.Action</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Custom&nbsp;action&nbsp;for&nbsp;parsing&nbsp;and&nbsp;firing&nbsp;report&nbsp;time&nbsp;records&nbsp;action<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="timekp.html#ReportAction">ReportAction</a></dd>
+<dd><a href="argparse.html#Action">argparse.Action</a></dd>
+<dd><a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ReportAction-__call__"><strong>__call__</strong></a>(self, parser, namespace, values, option_string<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#Action">argparse.Action</a>:<br>
+<dl><dt><a name="ReportAction-__init__"><strong>__init__</strong></a>(self, option_strings, dest, nargs<font color="#909090">=None</font>, const<font color="#909090">=None</font>, default<font color="#909090">=None</font>, type<font color="#909090">=None</font>, choices<font color="#909090">=None</font>, required<font color="#909090">=False</font>, help<font color="#909090">=None</font>, metavar<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><a name="ReportAction-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ReportMonthAction">class <strong>ReportMonthAction</strong></a>(<a href="argparse.html#Action">argparse.Action</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Custom&nbsp;action&nbsp;for&nbsp;parsing&nbsp;and&nbsp;firing&nbsp;report&nbsp;time&nbsp;records&nbsp;action<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="timekp.html#ReportMonthAction">ReportMonthAction</a></dd>
+<dd><a href="argparse.html#Action">argparse.Action</a></dd>
+<dd><a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ReportMonthAction-__call__"><strong>__call__</strong></a>(self, parser, namespace, values, option_string<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#Action">argparse.Action</a>:<br>
+<dl><dt><a name="ReportMonthAction-__init__"><strong>__init__</strong></a>(self, option_strings, dest, nargs<font color="#909090">=None</font>, const<font color="#909090">=None</font>, default<font color="#909090">=None</font>, type<font color="#909090">=None</font>, choices<font color="#909090">=None</font>, required<font color="#909090">=False</font>, help<font color="#909090">=None</font>, metavar<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><a name="ReportMonthAction-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ReportYearAction">class <strong>ReportYearAction</strong></a>(<a href="argparse.html#Action">argparse.Action</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Custom&nbsp;action&nbsp;for&nbsp;parsing&nbsp;and&nbsp;firing&nbsp;report&nbsp;time&nbsp;records&nbsp;action<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="timekp.html#ReportYearAction">ReportYearAction</a></dd>
+<dd><a href="argparse.html#Action">argparse.Action</a></dd>
+<dd><a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ReportYearAction-__call__"><strong>__call__</strong></a>(self, parser, namespace, values, option_string<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#Action">argparse.Action</a>:<br>
+<dl><dt><a name="ReportYearAction-__init__"><strong>__init__</strong></a>(self, option_strings, dest, nargs<font color="#909090">=None</font>, const<font color="#909090">=None</font>, default<font color="#909090">=None</font>, type<font color="#909090">=None</font>, choices<font color="#909090">=None</font>, required<font color="#909090">=False</font>, help<font color="#909090">=None</font>, metavar<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><a name="ReportYearAction-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SearchAction">class <strong>SearchAction</strong></a>(<a href="argparse.html#Action">argparse.Action</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Custom&nbsp;action&nbsp;for&nbsp;parsing&nbsp;and&nbsp;firing&nbsp;seach&nbsp;job&nbsp;categories&nbsp;action<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="timekp.html#SearchAction">SearchAction</a></dd>
+<dd><a href="argparse.html#Action">argparse.Action</a></dd>
+<dd><a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="SearchAction-__call__"><strong>__call__</strong></a>(self, parser, namespace, values, option_string<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#Action">argparse.Action</a>:<br>
+<dl><dt><a name="SearchAction-__init__"><strong>__init__</strong></a>(self, option_strings, dest, nargs<font color="#909090">=None</font>, const<font color="#909090">=None</font>, default<font color="#909090">=None</font>, type<font color="#909090">=None</font>, choices<font color="#909090">=None</font>, required<font color="#909090">=False</font>, help<font color="#909090">=None</font>, metavar<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><a name="SearchAction-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="StartAction">class <strong>StartAction</strong></a>(<a href="argparse.html#Action">argparse.Action</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Custom&nbsp;action&nbsp;for&nbsp;parsing&nbsp;and&nbsp;firing&nbsp;start&nbsp;time&nbsp;record&nbsp;action<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="timekp.html#StartAction">StartAction</a></dd>
+<dd><a href="argparse.html#Action">argparse.Action</a></dd>
+<dd><a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="StartAction-__call__"><strong>__call__</strong></a>(self, parser, namespace, values, option_string<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#Action">argparse.Action</a>:<br>
+<dl><dt><a name="StartAction-__init__"><strong>__init__</strong></a>(self, option_strings, dest, nargs<font color="#909090">=None</font>, const<font color="#909090">=None</font>, default<font color="#909090">=None</font>, type<font color="#909090">=None</font>, choices<font color="#909090">=None</font>, required<font color="#909090">=False</font>, help<font color="#909090">=None</font>, metavar<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><a name="StartAction-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="argparse.html#_AttributeHolder">argparse._AttributeHolder</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-add_job"><strong>add_job</strong></a>(values)</dt><dd><tt>Parses&nbsp;add&nbsp;arguments&nbsp;and&nbsp;fires&nbsp;add&nbsp;time&nbsp;record&nbsp;action</tt></dd></dl>
+ <dl><dt><a name="-add_job_category"><strong>add_job_category</strong></a>(jobcategory)</dt><dd><tt>Parses&nbsp;addjob&nbsp;arguments&nbsp;and&nbsp;fires&nbsp;the&nbsp;add&nbsp;job&nbsp;category&nbsp;action</tt></dd></dl>
+ <dl><dt><a name="-delete_job_category"><strong>delete_job_category</strong></a>(jobid)</dt><dd><tt>Parses&nbsp;deletejob&nbsp;arguments&nbsp;and&nbsp;fires&nbsp;the&nbsp;delete&nbsp;job&nbsp;category&nbsp;action</tt></dd></dl>
+ <dl><dt><a name="-delete_record"><strong>delete_record</strong></a>(record_id)</dt><dd><tt>Parses&nbsp;deleterecord&nbsp;arguments&nbsp;and&nbsp;fires&nbsp;the&nbsp;delete&nbsp;time&nbsp;record&nbsp;action</tt></dd></dl>
+ <dl><dt><a name="-end_job"><strong>end_job</strong></a>()</dt><dd><tt>Parses&nbsp;end&nbsp;argument&nbsp;and&nbsp;fires&nbsp;end&nbsp;job&nbsp;action</tt></dd></dl>
+ <dl><dt><a name="-get_interval"><strong>get_interval</strong></a>(start_date, days_to_add, date_format)</dt></dl>
+ <dl><dt><a name="-get_job_name"><strong>get_job_name</strong></a>(string_list)</dt><dd><tt>Helper&nbsp;function&nbsp;to&nbsp;join&nbsp;string&nbsp;elements&nbsp;in&nbsp;the&nbsp;list&nbsp;to&nbsp;constitute&nbsp;job&nbsp;name<br>
+It&nbsp;will&nbsp;raise&nbsp;an&nbsp;exception&nbsp;if&nbsp;the&nbsp;given&nbsp;list&nbsp;is&nbsp;empty</tt></dd></dl>
+ <dl><dt><a name="-list_job_ids"><strong>list_job_ids</strong></a>()</dt><dd><tt>Parses&nbsp;list&nbsp;argument&nbsp;and&nbsp;fires&nbsp;the&nbsp;list&nbsp;categories&nbsp;action</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>(argv)</dt><dd><tt>Main&nbsp;method&nbsp;which&nbsp;parses&nbsp;and&nbsp;fires&nbsp;the&nbsp;related&nbsp;action.<br>
+Note&nbsp;that&nbsp;argument&nbsp;parsing&nbsp;mechanism&nbsp;is&nbsp;used&nbsp;like&nbsp;something&nbsp;similar&nbsp;to&nbsp;onclick&nbsp;like&nbsp;actions.<br>
+All&nbsp;the&nbsp;optional&nbsp;arguments&nbsp;are&nbsp;actions&nbsp;to&nbsp;be&nbsp;performed&nbsp;so&nbsp;parsing&nbsp;and&nbsp;firing&nbsp;are&nbsp;performed&nbsp;together.</tt></dd></dl>
+ <dl><dt><a name="-report_all"><strong>report_all</strong></a>(job_types, start_time, end_time)</dt><dd><tt>Prints&nbsp;the&nbsp;detailed&nbsp;report&nbsp;for&nbsp;given&nbsp;job&nbsp;types</tt></dd></dl>
+ <dl><dt><a name="-report_summary"><strong>report_summary</strong></a>(start_time, end_time)</dt><dd><tt>Prints&nbsp;the&nbsp;summary&nbsp;report</tt></dd></dl>
+ <dl><dt><a name="-report_time"><strong>report_time</strong></a>(report_type<font color="#909090">='summary'</font>, start_time<font color="#909090">=datetime.datetime(1, 1, 1, 0, 0)</font>, end_time<font color="#909090">=datetime.datetime(9999, 12, 31, 0, 0)</font>)</dt><dd><tt>Parses&nbsp;report&nbsp;arguments&nbsp;and&nbsp;fires&nbsp;the&nbsp;report&nbsp;action</tt></dd></dl>
+ <dl><dt><a name="-search_job_ids"><strong>search_job_ids</strong></a>(search_words)</dt><dd><tt>Parses&nbsp;search&nbsp;arguments&nbsp;and&nbsp;fires&nbsp;the&nbsp;search&nbsp;job&nbsp;category&nbsp;action</tt></dd></dl>
+ <dl><dt><a name="-start_job"><strong>start_job</strong></a>(jobid)</dt><dd><tt>Parses&nbsp;start&nbsp;arguments&nbsp;and&nbsp;fires&nbsp;the&nbsp;start&nbsp;job&nbsp;action</tt></dd></dl>
+ <dl><dt><a name="-target"><strong>target</strong></a>(*args)</dt></dl>
+</td></tr></table>
+</body></html>
