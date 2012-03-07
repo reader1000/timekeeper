@@ -25,17 +25,17 @@ def test_parse_line():
     assert_equal(tkutil.parse_line(line,"##"), ["foo", "bar"])
 
 def test_parse_timedelta():
-    _days = 3
-    _hours = 7
-    _minutes = 49
-    dtxt = "%d days, %d hours, %d minutes" % (_days,_hours,_minutes)
-    assert_equal(tkutil.parse_timedelta(timedelta(days=_days, hours=_hours, minutes=_minutes)), dtxt)
+    tmp_days = 3
+    tmp_hours = 7
+    tmp_minutes = 49
+    dtxt = "%d days, %d hours, %d minutes" % (tmp_days, tmp_hours, tmp_minutes)
+    assert_equal(tkutil.parse_timedelta(timedelta(days=tmp_days, hours=tmp_hours, minutes=tmp_minutes)), dtxt)
     
-    _days = 200
-    _hours = 23
-    _minutes = 59
-    dtxt = "%d days, %d hours, %d minutes" % (_days,_hours,_minutes)
-    assert_equal(tkutil.parse_timedelta(timedelta(days=_days, hours=_hours, minutes=_minutes)), dtxt)
+    tmp_days = 200
+    tmp_hours = 23
+    tmp_minutes = 59
+    dtxt = "%d days, %d hours, %d minutes" % (tmp_days, tmp_hours, tmp_minutes)
+    assert_equal(tkutil.parse_timedelta(timedelta(days=tmp_days, hours=tmp_hours, minutes=tmp_minutes)), dtxt)
 
 def test_parse_time_details():
     # keys: record_id, jobid, start_time, end_time
