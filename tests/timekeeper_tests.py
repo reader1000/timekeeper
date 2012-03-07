@@ -3,6 +3,7 @@ from nose.tools import *
 from timekeeper import tkutil
 from timekeeper.tkutil import JobType
 from datetime import timedelta
+from datetime import datetime
 
 def test_get_job_type():
     assert_equal(tkutil.get_job_type("work"), JobType.WORK)
@@ -35,4 +36,37 @@ def test_parse_timedelta():
     _minutes = 59
     dtxt = "%d days, %d hours, %d minutes" % (_days,_hours,_minutes)
     assert_equal(tkutil.parse_timedelta(timedelta(days=_days, hours=_hours, minutes=_minutes)), dtxt)
+
+def test_parse_time_details():
+    # keys: record_id, jobid, start_time, end_time
+    job_details = tkutil.parse_time_details("0=>0=>10/01/2012-13:30#10/01/2012-15:47")
+    
+    start_time = datetime(2012,1,10,13, 30)
+    end_time = datetime(2012,1,10,15, 47)
+    
+    assert_equal(job_details["record_id"], "0")
+    assert_equal(job_details["jobid"], "0")
+    assert_equal(job_details["start_time"], start_time)
+    assert_equal(job_details["end_time"], end_time)
+    
+    job_details = tkutil.parse_time_details("3=>1=>03/12/2011-10:30#03/12/2011-12:30")
+    
+    start_time = datetime(2011,12,3,10, 30)
+    end_time = datetime(2011,12,3,12, 30)
+    
+    assert_equal(job_details["record_id"], "3")
+    assert_equal(job_details["jobid"], "1")
+    assert_equal(job_details["start_time"], start_time)
+    assert_equal(job_details["end_time"], end_time)
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
